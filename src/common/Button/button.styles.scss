@@ -1,0 +1,29 @@
+@import "assets/scss/utils/vars.scss";
+
+.btn {
+  display: inline-block;
+  padding: 0.4em 1.8em;
+  border-radius: 4px;
+  color: $default-color;
+  transition: all 0.3s ease-in-out;
+
+  &--primary {
+    background-color: $primary-color;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &--small {
+    font-size: $font-size-s;
+  }
+
+  &--medium {
+    font-size: $font-size-m;
+  }
+
+  &--large {
+    font-size: $font-size-l;
+  }
+}
