@@ -1,16 +1,16 @@
 import React, { ButtonHTMLAttributes } from "react";
 import {
-  ButtonTypes,
-  ButtonSizes,
-  ButtonThemes,
-  ButtonVariants,
+  ButtonType,
+  ButtonSize,
+  ButtonTheme,
+  ButtonVariant,
 } from "./button.types";
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  type?: ButtonTypes;
-  size?: ButtonSizes;
-  theme?: ButtonThemes;
-  variants?: ButtonVariants;
+  type?: ButtonType;
+  size?: ButtonSize;
+  theme?: ButtonTheme;
+  variants?: ButtonVariant;
   disabled?: boolean;
   className?: string;
   children: React.ReactNode;

@@ -1,6 +1,8 @@
 import React from "react";
-import "./button.styles.scss";
 import classNames from "classnames";
+
+import "./button.styles.scss";
+
 import { IButtonProps } from "./button.interface";
 
 const Button: React.FC<IButtonProps> = ({

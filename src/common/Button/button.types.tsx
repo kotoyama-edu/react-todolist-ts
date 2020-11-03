@@ -1,4 +1,4 @@
-export type ButtonThemes = "primary" | "secondary" | "transparent";
-export type ButtonTypes = "submit" | "reset" | "button";
-export type ButtonSizes = "small" | "medium" | "large";
-export type ButtonVariants = "icon" | "block";
+export type ButtonTheme = "primary" | "secondary" | "transparent";
+export type ButtonType = "submit" | "reset" | "button";
+export type ButtonSize = "small" | "medium" | "large";
+export type ButtonVariant = "icon" | "block";
