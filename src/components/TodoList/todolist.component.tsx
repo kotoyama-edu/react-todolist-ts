@@ -4,11 +4,8 @@ import { observer, inject } from "mobx-react";
 import { ITodoListProps } from "./todolist.interface";
 
 const TodoList: React.FC<ITodoListProps> = inject("TodoListStore")(
-  // TodoListStore,
-  observer(({ ...props }) => {
-    const { todoList } = props;
+  observer(({ todoList }) => {
     const { todos, removeTodo, currentView } = todoList;
-
     return <p>Тест</p>;
   })
 );
