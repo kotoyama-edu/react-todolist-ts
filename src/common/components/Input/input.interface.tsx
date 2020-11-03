@@ -3,13 +3,15 @@ import { InputType } from "./input.types";
 
 export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: InputType;
-  name: string;
+  name?: string;
   className?: string;
   value?: string;
   placeholder?: string;
-  autoComplete: string;
-  autoFocus: boolean;
+  autoComplete?: string;
+  autoFocus?: boolean;
   disabled?: boolean;
+  checked?: boolean;
+  label?: React.ReactNode;
   mask?: string | Array<string | RegExp>;
   onChange?: (event?: React.ChangeEvent<HTMLInputElement>) => void;
 }

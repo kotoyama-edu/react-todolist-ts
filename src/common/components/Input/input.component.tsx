@@ -4,8 +4,6 @@ import classNames from "classnames";
 
 import "./input.styles.scss";
 
-import "./button.styles.scss";
-
 import { IInputProps } from "./input.interface";
 
 const Input: React.FC<IInputProps> = ({
