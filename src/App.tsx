@@ -1,18 +1,23 @@
 import React from "react";
-import { Provider } from "mobx-react";
-
-import stores from "stores";
+import { hot } from "react-hot-loader/root";
+import { observer, inject } from "mobx-react";
+// import AppStore from "stores/app.store";
 
 import { Button } from "common/components/Button";
+// import { TodoList } from "components/TodoList";
 
-function App() {
-  return (
-    <Provider {...stores}>
+const App = inject("AppStore")(
+  observer(({ AppStore }: any) => {
+    // const appState = new AppStore();
+    const { todoList } = AppStore;
+
+    return (
       <div className="App">
         <Button size="large">Кнопка</Button>
+        {/* <TodoList todoList={todoList} /> */}
       </div>
-    </Provider>
-  );
-}
+    );
+  })
+);
 
-export default App;
+export default hot(App);
