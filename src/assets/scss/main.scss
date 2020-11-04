@@ -43,14 +43,14 @@ section,
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  justify-content: center;
+  // align-items: center;
   min-height: 100vh;
 }
 
 .wrapper-content {
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
 }
 
 .container {
