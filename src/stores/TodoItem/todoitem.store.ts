@@ -3,29 +3,29 @@ import { action, observable, makeObservable } from "mobx";
 import { ITodoItem } from "./";
 
 export default class TodoItemStore {
-  public readonly value: ITodoItem;
+  public readonly item: ITodoItem;
   public isEditMode: boolean = false;
 
-  constructor(value: ITodoItem) {
+  constructor(item: ITodoItem) {
     makeObservable(this, {
-      value: observable,
+      item: observable,
       isEditMode: observable,
       setIsEditMode: action,
       editName: action,
-      editCompleted: action,
+      setCompleted: action,
     });
-    this.value = value;
+    this.item = item;
   }
 
-  public setIsEditMode = (value: boolean = true): void => {
-    this.isEditMode = value;
+  public setIsEditMode = (mode: boolean = true): void => {
+    this.isEditMode = mode;
   };
 
   public editName = (name: string): void => {
-    this.value.name = name;
+    this.item.name = name;
   };
 
-  public editCompleted = (completed: boolean): void => {
-    this.value.completed = completed;
+  public setCompleted = (completed: boolean): void => {
+    this.item.completed = completed;
   };
 }

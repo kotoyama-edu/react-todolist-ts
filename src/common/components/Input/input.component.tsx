@@ -17,7 +17,7 @@ const Input: React.FC<IInputProps> = ({
     [`input--${className}`]: className,
   });
 
-  return <input className={style} onChange={onChange} {...props} />;
+  return <input type={type} className={style} onChange={onChange} {...props} />;
 };
 
 Input.defaultProps = {

@@ -4,7 +4,6 @@ import { observer, inject } from "mobx-react";
 
 import AppStore from "stores/app.store";
 
-import { Button } from "common/components/Button";
 import { TodoList } from "components/TodoList";
 
 const App = inject("AppStore")(
@@ -21,9 +20,12 @@ const App = inject("AppStore")(
     }, [todoList]);
 
     return (
-      <div className="App">
-        <Button size="large">Кнопка</Button>
-        <TodoList todoList={todoList} />
+      <div className="wrapper">
+        <div className="wrapper-content">
+          <div className="container">
+            <TodoList todoList={todoList} />
+          </div>
+        </div>
       </div>
     );
   })

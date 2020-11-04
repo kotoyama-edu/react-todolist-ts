@@ -32,11 +32,11 @@ export default class TodoListStore {
   }
 
   public get completedTodos(): TodoItemStore[] {
-    return this._todos.filter((todo) => todo.value.completed);
+    return this._todos.filter((todo) => todo.item.completed);
   }
 
   public get activeTodos(): TodoItemStore[] {
-    return this._todos.filter((todo) => !todo.value.completed);
+    return this._todos.filter((todo) => !todo.item.completed);
   }
 
   public setTodos = (todos: ITodoItem[]): void => {
@@ -48,7 +48,7 @@ export default class TodoListStore {
   };
 
   public removeTodo = (id: string): boolean => {
-    const index = this._todos.findIndex((todo) => todo.value.id === id);
+    const index = this._todos.findIndex((todo) => todo.item.id === id);
     if (index === -1) return false;
     this._todos.splice(index, 1);
     return true;
