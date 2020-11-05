@@ -1,7 +1,8 @@
 @import "assets/scss/utils/vars.scss";
 
 .wrapper__input {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 
   .input {
     &--text {
@@ -16,6 +17,10 @@
       &::placeholder {
         color: $neutral-placeholder;
       }
+    }
+
+    &--checkbox {
+      margin-right: 0.8rem;
     }
   }
 }
