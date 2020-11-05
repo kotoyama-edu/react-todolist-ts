@@ -10,6 +10,7 @@ const Input: React.FC<IInputProps> = ({
   type,
   onChange,
   className,
+  errors,
   ...props
 }) => {
   let style = classNames("input", {
@@ -17,7 +18,12 @@ const Input: React.FC<IInputProps> = ({
     [`input--${className}`]: className,
   });
 
-  return <input type={type} className={style} onChange={onChange} {...props} />;
+  return (
+    <div className="wrapper__input">
+      <input type={type} className={style} onChange={onChange} {...props} />
+      {errors && <span className="errors">{errors}</span>}
+    </div>
+  );
 };
 
 Input.defaultProps = {
