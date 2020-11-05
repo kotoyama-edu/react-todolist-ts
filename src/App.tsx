@@ -5,11 +5,12 @@ import { observer, inject } from "mobx-react";
 import AppStore from "stores/app.store";
 
 import { TodoList } from "components/TodoList";
+// import { AddTodo } from "components/AddTodo";
 
 const App = inject("AppStore")(
   observer(() => {
     const appState = new AppStore();
-    const { todoList } = appState;
+    const { todoList, addTodo } = appState;
     const { setTodos } = todoList;
 
     useEffect(() => {
@@ -20,6 +21,7 @@ const App = inject("AppStore")(
       <div className="wrapper">
         <div className="wrapper-content">
           <div className="container">
+            {/* <AddTodo onAdd={addTodo} /> */}
             <TodoList todoList={todoList} />
           </div>
         </div>
