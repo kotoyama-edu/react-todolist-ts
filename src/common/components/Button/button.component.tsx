@@ -9,7 +9,7 @@ const Button: React.FC<IButtonProps> = ({
   children,
   onClick,
   className,
-  variants,
+  variant,
   theme,
   size,
   ...props
@@ -18,7 +18,7 @@ const Button: React.FC<IButtonProps> = ({
     [`btn--${className}`]: className,
     [`btn--${theme}`]: theme,
     [`btn--${size}`]: size,
-    [`btn--${variants}`]: variants,
+    [`btn--${variant}`]: variant,
   });
 
   return (
@@ -30,7 +30,7 @@ const Button: React.FC<IButtonProps> = ({
 
 Button.defaultProps = {
   type: "button",
-  variants: "block",
+  variant: "block",
   disabled: false,
   size: "medium",
   theme: "primary",

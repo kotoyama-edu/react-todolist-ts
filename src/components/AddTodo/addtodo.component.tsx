@@ -25,7 +25,12 @@ const AddTodo: React.FC<IAddTodoProps> = inject("AppStore")(
 
     return (
       <form className="form" onSubmit={handleSubmit}>
-        <Input value={name} onChange={handleAddChange} autoFocus />
+        <Input
+          value={name}
+          placeholder="Название задачи"
+          onChange={handleAddChange}
+          autoFocus
+        />
         <Button type="submit">Добавить</Button>
       </form>
     );

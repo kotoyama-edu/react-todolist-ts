@@ -7,7 +7,9 @@ import "./input.styles.scss";
 import { IInputProps } from "./input.interface";
 
 const Input: React.FC<IInputProps> = ({
+  id,
   type,
+  label,
   onChange,
   className,
   errors,
@@ -20,7 +22,14 @@ const Input: React.FC<IInputProps> = ({
 
   return (
     <div className="wrapper__input">
-      <input type={type} className={style} onChange={onChange} {...props} />
+      <input
+        id={id}
+        type={type}
+        className={style}
+        onChange={onChange}
+        {...props}
+      />
+      {type === "checkbox" && <label htmlFor={id}>{label}</label>}
       {errors && <span className="errors">{errors}</span>}
     </div>
   );

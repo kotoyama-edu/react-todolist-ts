@@ -10,7 +10,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   type?: ButtonType;
   size?: ButtonSize;
   theme?: ButtonTheme;
-  variants?: ButtonVariant;
+  variant?: ButtonVariant;
   disabled?: boolean;
   className?: string;
   children: React.ReactNode;

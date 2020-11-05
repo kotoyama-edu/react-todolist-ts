@@ -10,10 +10,10 @@ import { Button } from "common/components/Button";
 
 const TodoItem: React.FC<ITodoItemProps> = inject("TodoListStore")(
   observer(({ todo, onDelete }) => {
-    const { name, completed } = todo.item;
+    const { id, name, completed } = todo.item;
     const { setCompleted } = todo;
 
-    const handleCompletedChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    const handleChangeCompleted: ChangeEventHandler<HTMLInputElement> = (e) => {
       setCompleted(e.target.checked);
     };
 
@@ -21,11 +21,12 @@ const TodoItem: React.FC<ITodoItemProps> = inject("TodoListStore")(
       <li className="todo__item">
         <div className="todo__item-info">
           <Input
+            id={id}
             type="checkbox"
             checked={completed}
-            onChange={handleCompletedChange}
+            label={name}
+            onChange={handleChangeCompleted}
           />
-          <span>{name}</span>
         </div>
         <div className="todo__item-actions">
           <Button

@@ -13,10 +13,15 @@ export default class AppStore {
   constructor() {
     makeObservable(this, {
       newTodo: observable,
+      reset: action,
       addTodo: action,
       changeTodo: action,
     });
   }
+
+  public reset = (): void => {
+    this.newTodo.name = "";
+  };
 
   public changeTodo = (value: string): void => {
     this.newTodo.name = value;
@@ -28,5 +33,6 @@ export default class AppStore {
       name: this.newTodo.name,
       completed: this.newTodo.completed,
     });
+    this.reset();
   };
 }
