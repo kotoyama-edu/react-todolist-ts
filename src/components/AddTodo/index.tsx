@@ -1,1 +1,1 @@
-export { default as Addtodo } from "./addtodo.component";
+export { default as AddTodo } from "./addtodo.component";

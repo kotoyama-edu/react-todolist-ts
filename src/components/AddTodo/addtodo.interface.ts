@@ -1,3 +1,7 @@
+import { ITodoItem } from "stores/TodoItem";
+
 export interface IAddTodoProps {
-  onAdd: (value: string) => void;
+  todo: ITodoItem;
+  onAdd: () => void;
+  onChange: (value: string) => void;
 }

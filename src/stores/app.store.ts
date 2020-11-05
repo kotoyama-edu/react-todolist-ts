@@ -1,33 +1,28 @@
-import { action, computed, makeObservable } from "mobx";
+import { observable, action, makeObservable } from "mobx";
 import { TodoListStore } from "./TodoList";
 import { ITodoItem } from "./TodoItem";
 
 export default class AppStore {
   public todoList = new TodoListStore();
-  public formValue = "";
+  public newTodo: ITodoItem = {
+    id: Date.now().toString(),
+    name: "",
+    completed: false,
+  };
 
   constructor() {
     makeObservable(this, {
+      newTodo: observable,
       addTodo: action,
-      errors: computed,
+      changeTodo: action,
     });
   }
 
-  public get errors() {
-    let error = {};
+  public changeTodo = (value: string): void => {
+    this.newTodo.name = value;
+  };
 
-    // if (!this.formValue) {
-    //   error["formValue"] = EMPTY_ERR;
-    // }
-    return error;
-  }
-
-  public addTodo = (value: string): void => {
-    const newTodo: ITodoItem = {
-      id: Date.now().toString(),
-      name: value,
-      completed: false,
-    };
-    this.todoList.addTodo(newTodo);
+  public addTodo = (): void => {
+    this.todoList.addTodo(this.newTodo);
   };
 }
