@@ -10,14 +10,11 @@ const App = inject("AppStore")(
   observer(() => {
     const appState = new AppStore();
     const { todoList } = appState;
+    const { setTodos } = todoList;
 
     useEffect(() => {
-      if (todoList) {
-        todoList.setTodos([
-          { id: Date.now().toString(), name: "123", completed: false },
-        ]);
-      }
-    }, [todoList]);
+      setTodos([{ id: Date.now().toString(), name: "123", completed: false }]);
+    }, [setTodos]);
 
     return (
       <div className="wrapper">

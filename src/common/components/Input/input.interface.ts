@@ -13,5 +13,5 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   checked?: boolean;
   label?: React.ReactNode;
   mask?: string | Array<string | RegExp>;
-  onChange?: (event?: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

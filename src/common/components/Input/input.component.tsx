@@ -24,7 +24,6 @@ Input.defaultProps = {
   type: "text",
   disabled: false,
   autoFocus: false,
-  autoComplete: "off",
 };
 
 export default Input;
