@@ -5,7 +5,7 @@ import { ITodoItem } from "./TodoItem";
 export default class AppStore {
   public todoList = new TodoListStore();
   public newTodo: ITodoItem = {
-    id: Date.now().toString(),
+    id: "",
     name: "",
     completed: false,
   };
@@ -23,6 +23,10 @@ export default class AppStore {
   };
 
   public addTodo = (): void => {
-    this.todoList.addTodo(this.newTodo);
+    this.todoList.addTodo({
+      id: Date.now().toString(),
+      name: this.newTodo.name,
+      completed: this.newTodo.completed,
+    });
   };
 }

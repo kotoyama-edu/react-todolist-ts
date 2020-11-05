@@ -1,3 +1,16 @@
+@import "assets/scss/utils/vars.scss";
+
 .wrapper__input {
   display: inline-flex;
+
+  .input {
+    &--text {
+      border: none;
+      font-size: 1rem;
+      min-width: 100%;
+      padding: 0.6rem 1rem;
+      outline: 1px solid $border-base;
+      transition: outline 0.2s ease-in-out;
+    }
+  }
 }

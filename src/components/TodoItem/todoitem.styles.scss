@@ -8,6 +8,10 @@
   padding: 1rem;
   color: $default-color;
 
+  &:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
   &-info {
     span {
       padding: 0 1rem;

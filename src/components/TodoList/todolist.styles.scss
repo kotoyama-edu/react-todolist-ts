@@ -1,7 +1,5 @@
-// .todos {
-//   display: flex;
-
-//   &__list {
-//     display: flex;
-//   }
-// }
+.todos {
+  &__list {
+    margin-bottom: 18px;
+  }
+}

@@ -1,16 +1,1 @@
-@import "assets/scss/utils/vars.scss";
 
-.todo__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: $todo-pink;
-  padding: 1rem;
-  color: $default-color;
-
-  &-info {
-    span {
-      padding: 0 1rem;
-    }
-  }
-}
