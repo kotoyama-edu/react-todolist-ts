@@ -3,9 +3,9 @@
 
 html {
   line-height: $mainLineHeight;
-  font-family: $mainFont;
   font-size: $mainFontSize;
   font-weight: $mainFontWeight;
+  font-family: "Roboto", sans-serif;
   color: $mainFontColor;
   height: 100%;
 
@@ -61,19 +61,19 @@ section,
   flex: 0 0 auto;
   position: relative;
   margin: 0 auto;
-  max-width: $desktopWidth;
+  max-width: 600px;
 
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: $tableWidth;
-  }
+  // @media screen and (max-width: $smDesktopWidth) {
+  //   max-width: $tableWidth;
+  // }
 
-  @media screen and (max-width: $tableWidth) {
-    max-width: $phoneWidth;
-  }
+  // @media screen and (max-width: $tableWidth) {
+  //   max-width: $phoneWidth;
+  // }
 
-  @media screen and (max-width: $phoneWidth) {
-    max-width: $smPhoneWidth;
-  }
+  // @media screen and (max-width: $phoneWidth) {
+  //   max-width: $smPhoneWidth;
+  // }
 }
 
 @import "./index.scss";

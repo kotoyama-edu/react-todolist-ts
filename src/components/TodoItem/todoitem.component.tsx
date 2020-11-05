@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from "react";
+import React, { ChangeEvent, ChangeEventHandler } from "react";
 import { observer, inject } from "mobx-react";
 
 import "./todoitem.styles.scss";
@@ -14,21 +14,30 @@ const TodoItem: React.FC<ITodoItemProps> = inject("TodoListStore")(
     const { setCompleted } = todo;
 
     const handleCompletedChange: ChangeEventHandler<HTMLInputElement> = (
-      e: React.ChangeEvent<HTMLInputElement>
+      e: ChangeEvent<HTMLInputElement>
     ) => {
       setCompleted(e.target.checked);
     };
 
     return (
       <li className="todo__item">
-        <Input
-          className="todo__item-checkbox"
-          type="checkbox"
-          checked={completed}
-          onChange={handleCompletedChange}
-        />
-        <span>{name}</span>
-        <Button onClick={() => onDelete(todo.item.id)}>Удалить</Button>
+        <div className="todo__item-info">
+          <Input
+            type="checkbox"
+            checked={completed}
+            onChange={handleCompletedChange}
+          />
+          <span>{name}</span>
+        </div>
+        <div className="todo__item-actions">
+          <Button
+            size="small"
+            theme="transparent"
+            onClick={() => onDelete(todo.item.id)}
+          >
+            Удалить
+          </Button>
+        </div>
       </li>
     );
   })

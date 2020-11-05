@@ -2,7 +2,6 @@
 
 .btn {
   display: inline-block;
-  padding: 0.4em 1.8em;
   border-radius: 4px;
   color: $default-color;
   transition: all 0.3s ease-in-out;
@@ -12,6 +11,12 @@
 
     &:hover {
       background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &--transparent {
+    &:hover {
+      text-decoration: underline;
     }
   }
 
