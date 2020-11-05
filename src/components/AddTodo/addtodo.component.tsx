@@ -5,13 +5,14 @@ import "./addtodo.styles.scss";
 
 import { IAddTodoProps } from "./addtodo.interface";
 
-// import { notEmpty } from "helpers/validation/rules";
+import { notEmpty } from "helpers/validation/rules";
 
 import { Input } from "common/components/Input";
 import { Button } from "common/components/Button";
 
 const AddTodo: React.FC<IAddTodoProps> = inject("AppStore")(
-  observer(({ todo, onAdd, onChange }) => {
+  observer((props: IAddTodoProps) => {
+    const { todo, onAdd, onChange, setError } = props;
     const { name } = todo;
 
     const handleAddChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -20,15 +21,18 @@ const AddTodo: React.FC<IAddTodoProps> = inject("AppStore")(
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
       e.preventDefault();
+      setError("task", notEmpty(name));
       onAdd();
     };
 
     return (
       <form className="form" onSubmit={handleSubmit}>
         <Input
+          name="task"
           value={name}
           placeholder="Название задачи"
           onChange={handleAddChange}
+          // rules={[notEmpty(name)]}
           autoFocus
         />
         <Button type="submit">Добавить</Button>

@@ -10,7 +10,15 @@ import { AddTodo } from "components/AddTodo";
 const App = inject("AppStore")(
   observer(() => {
     const appState = new AppStore();
-    const { newTodo, todoList, addTodo, changeTodo } = appState;
+    const {
+      newTodo,
+      todoList,
+      addTodo,
+      changeTodo,
+      _errors,
+      setError,
+      // isSubmitted,
+    } = appState;
     const { setTodos } = todoList;
 
     useEffect(() => {
@@ -22,7 +30,14 @@ const App = inject("AppStore")(
         <div className="wrapper-content">
           <div className="container">
             <TodoList todoList={todoList} />
-            <AddTodo todo={newTodo} onAdd={addTodo} onChange={changeTodo} />
+            <AddTodo
+              todo={newTodo}
+              onAdd={addTodo}
+              onChange={changeTodo}
+              errors={_errors}
+              setError={setError}
+              // isSubmitted={isSubmitted}
+            />
           </div>
         </div>
       </div>
