@@ -1,8 +1,9 @@
 import { action, observable, makeObservable } from "mobx";
 
-import { ITodoItem } from "./";
+import ITodoItem from "../types";
+import { ITodoItemStore } from "./todoitem.interface";
 
-export default class TodoItemStore {
+export default class TodoItemStore implements ITodoItemStore {
   public readonly item: ITodoItem;
   public isEditMode: boolean = false;
 
@@ -10,14 +11,14 @@ export default class TodoItemStore {
     makeObservable(this, {
       item: observable,
       isEditMode: observable,
-      setIsEditMode: action,
+      setEditMode: action,
       editName: action,
       setCompleted: action,
     });
     this.item = item;
   }
 
-  public setIsEditMode = (mode: boolean = true): void => {
+  public setEditMode = (mode: boolean = true): void => {
     this.isEditMode = mode;
   };
 

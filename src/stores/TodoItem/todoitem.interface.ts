@@ -1,5 +1,9 @@
-export default interface ITodoItem {
-  id: string;
-  name: string;
-  completed: boolean;
+import ITodoItem from "../types";
+
+export interface ITodoItemStore {
+  item: ITodoItem;
+  isEditMode: boolean;
+  setEditMode: (mode: boolean) => void;
+  editName: (name: string) => void;
+  setCompleted: (completed: boolean) => void;
 }

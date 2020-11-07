@@ -8,7 +8,7 @@ import { ITodoItemProps } from "./todoitem.interface";
 import { Input } from "common/components/Input";
 import { Button } from "common/components/Button";
 
-const TodoItem: React.FC<ITodoItemProps> = inject("TodoListStore")(
+const TodoItem: React.FC<ITodoItemProps> = inject("TodoItemStore")(
   observer(({ todo, onDelete }) => {
     const { id, name, completed } = todo.item;
     const { setCompleted } = todo;

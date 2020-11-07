@@ -1,9 +1,11 @@
 import { action, observable, computed, makeObservable } from "mobx";
 
-import { ITodoItem, TodoItemStore } from "../TodoItem";
+import ITodoItem from "../types";
+import { TodoItemStore } from "../TodoItem";
 import { TCurrentView } from "./todolist.enum";
+import { ITodoListStore } from "./todolist.interface";
 
-export default class TodoListStore {
+export default class TodoListStore implements ITodoListStore {
   public currentView: TCurrentView = TCurrentView.all;
   public _todos: TodoItemStore[] = [];
 
