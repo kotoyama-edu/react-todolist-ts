@@ -9,8 +9,7 @@ import AppStore from "stores/app.store";
 
 const App = inject("AppStore")(
   observer(() => {
-    const appState = new AppStore();
-    const { newTodo, todoList, addTodo, changeTodo } = appState;
+    const { newTodo, todoList, addTodo, changeTodo, isValid } = AppStore;
     const { setTodos } = todoList;
 
     useEffect(() => {
@@ -33,7 +32,12 @@ const App = inject("AppStore")(
         <div className="wrapper-content">
           <div className="container">
             <TodoList todoList={todoList} />
-            <AddTodo todo={newTodo} onAdd={addTodo} onChange={changeTodo} />
+            <AddTodo
+              todo={newTodo}
+              onAdd={addTodo}
+              onChange={changeTodo}
+              isValid={isValid}
+            />
           </div>
         </div>
       </div>

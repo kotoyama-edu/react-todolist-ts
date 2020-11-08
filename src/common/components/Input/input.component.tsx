@@ -12,7 +12,6 @@ const Input: React.FC<IInputProps> = ({
   label,
   onChange,
   className,
-  errors,
   ...props
 }) => {
   let style = classNames("input", {
@@ -30,7 +29,7 @@ const Input: React.FC<IInputProps> = ({
         {...props}
       />
       {type === "checkbox" && <label htmlFor={id}>{label}</label>}
-      {errors && <span className="errors">{errors}</span>}
+      {/* {errors && <span className="errors">{errors}</span>} */}
     </div>
   );
 };

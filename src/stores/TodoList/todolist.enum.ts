@@ -1,5 +1,5 @@
 export enum TCurrentView {
-  completed,
-  active,
-  all,
+  completed = "COMPLETED",
+  active = "ACTIVE",
+  all = "ALL",
 }

@@ -9,7 +9,7 @@ import { Input } from "common/components/Input";
 import { Button } from "common/components/Button";
 
 const AddTodo: React.FC<IAddTodoProps> = observer((props: IAddTodoProps) => {
-  const { todo, onAdd, onChange } = props;
+  const { todo, onAdd, onChange, isValid } = props;
   const { name } = todo;
 
   const handleAddChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -30,7 +30,9 @@ const AddTodo: React.FC<IAddTodoProps> = observer((props: IAddTodoProps) => {
         onChange={handleAddChange}
         autoFocus
       />
-      <Button type="submit">Добавить</Button>
+      <Button type="submit" disabled={!isValid}>
+        Добавить
+      </Button>
     </form>
   );
 });

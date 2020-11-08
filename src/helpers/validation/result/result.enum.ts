@@ -1,7 +1,7 @@
 enum TValidationResult {
-  valid,
-  warning,
-  error,
+  valid = "VALID",
+  warning = "WARNING",
+  error = "ERROR",
 }
 
 export default TValidationResult;
