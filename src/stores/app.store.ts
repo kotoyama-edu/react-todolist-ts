@@ -4,7 +4,7 @@ import ITodoItem from "./types";
 import { TodoListStore } from "./TodoList";
 
 import { combineRules } from "helpers/validation";
-import { notEmpty, cyrillic } from "helpers/validation/rules";
+import { notEmpty } from "helpers/validation/rules";
 import { IValidationResult } from "helpers/validation/result";
 
 export interface IAppStore {
@@ -38,7 +38,7 @@ class AppStore implements IAppStore {
   }
 
   public get validation(): IValidationResult {
-    const rules = [notEmpty, cyrillic];
+    const rules = [notEmpty];
     return combineRules(...rules).call(rules, this.newTodo.name);
   }
 

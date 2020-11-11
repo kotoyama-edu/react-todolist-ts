@@ -1,5 +1,4 @@
 import React, { ChangeEventHandler, FormEventHandler } from "react";
-import { observer } from "mobx-react";
 
 import "./addtodo.styles.scss";
 
@@ -8,7 +7,7 @@ import { IAddTodoProps } from "./addtodo.interface";
 import { Input } from "common/components/Input";
 import { Button } from "common/components/Button";
 
-const AddTodo: React.FC<IAddTodoProps> = observer((props: IAddTodoProps) => {
+const AddTodo: React.FC<IAddTodoProps> = (props: IAddTodoProps) => {
   const { todo, onAdd, onChange, isValid } = props;
   const { name } = todo;
 
@@ -35,6 +34,6 @@ const AddTodo: React.FC<IAddTodoProps> = observer((props: IAddTodoProps) => {
       </Button>
     </form>
   );
-});
+};
 
 export default AddTodo;
