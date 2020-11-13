@@ -1,1 +1,1 @@
-export { default as getBase64 } from "./getbase64";
+export { default as getBase64 } from "./getBase64";
