@@ -5,8 +5,8 @@ import "./todoitem.styles.scss";
 
 import { ITodoItemProps } from "./todoitem.interface";
 
-import { Input } from "common/components/Input";
-import { Button } from "common/components/Button";
+import { Input } from "components/inputs/Input";
+import { Button } from "components/inputs/Button";
 
 const TodoItem: React.FC<ITodoItemProps> = inject("TodoItemStore")(
   observer(({ todo, onDelete }) => {

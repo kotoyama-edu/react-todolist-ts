@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { hot } from "react-hot-loader/root";
 import { observer } from "mobx-react";
 
-import { TodoList } from "components/TodoList";
-import { AddTodo } from "components/AddTodo";
+import { TodoList } from "components/view/TodoList";
+import { AddTodo } from "components/view/AddTodo";
 
 import AppStore from "stores/app.store";
 

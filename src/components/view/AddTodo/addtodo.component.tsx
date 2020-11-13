@@ -4,8 +4,8 @@ import "./addtodo.styles.scss";
 
 import { IAddTodoProps } from "./addtodo.interface";
 
-import { Input } from "common/components/Input";
-import { Button } from "common/components/Button";
+import { Input } from "components/inputs/Input";
+import { Button } from "components/inputs/Button";
 
 const AddTodo: React.FC<IAddTodoProps> = (props: IAddTodoProps) => {
   const { todo, onAdd, onChange, isValid } = props;
