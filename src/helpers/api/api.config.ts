@@ -1,6 +1,6 @@
-import axios, { AxiosInstance } from "axios";
+import { AxiosRequestConfig } from "axios";
 
-export const api: AxiosInstance = axios.create({
+export const apiConfig: AxiosRequestConfig = {
   withCredentials: true,
   timeout: 30000,
   baseURL: "/",
@@ -10,4 +10,4 @@ export const api: AxiosInstance = axios.create({
     Accept: "application/json",
     Pragma: "no-cache",
   },
-});
+};
