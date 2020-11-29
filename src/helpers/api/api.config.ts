@@ -1,9 +1,9 @@
 import { AxiosRequestConfig } from "axios";
 
 export const apiConfig: AxiosRequestConfig = {
-  withCredentials: true,
+  // withCredentials: true,
   timeout: 30000,
-  baseURL: "/",
+  baseURL: "http://localhost:3001",
   headers: {
     "Cache-Control": "no-cache, no-store, must-revalidate",
     "Content-Type": "application/json",

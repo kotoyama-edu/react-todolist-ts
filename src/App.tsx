@@ -9,22 +9,11 @@ import AppStore from "stores/app.store";
 
 const App = observer(() => {
   const { newTodo, todoList, addTodo, changeTodo, isValid } = AppStore;
-  const { setTodos } = todoList;
+  const { fetchTodos } = todoList;
 
   useEffect(() => {
-    setTodos([
-      {
-        id: "1",
-        name: "Learn react, typescript, mobx",
-        completed: false,
-      },
-      {
-        id: "2",
-        name: "Learn javascript, css, sass",
-        completed: true,
-      },
-    ]);
-  }, [setTodos]);
+    fetchTodos();
+  }, [fetchTodos]);
 
   return (
     <div className="wrapper">

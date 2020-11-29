@@ -3,7 +3,7 @@ import { apiConfig } from "../api.config";
 import { IHttpClient } from "./httpClient.interface";
 import { IHttpClientRequestParams } from "./httpClientRequestParams.interface";
 
-export abstract class HttpClient implements IHttpClient {
+class HttpClient implements IHttpClient {
   protected readonly client: AxiosInstance;
 
   // TODO: set auth
@@ -50,3 +50,5 @@ export abstract class HttpClient implements IHttpClient {
       ?.data;
   }
 }
+
+export const httpClient = new HttpClient();
